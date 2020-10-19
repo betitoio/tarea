@@ -1,0 +1,86 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registro de Alumnos</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel id="panel" header="Datos del Estudiante" footer="Universidad Nacional Siglo XX">
+                <p:panelGrid columns="2">
+                    <p:outputLabel for="nombres" value="Nombres: "/>
+                    <p:inputText id="nombres" value="#{inputBean.nombres}"/>
+                    
+                    <p:outputLabel for="apellidos" value="Apellidos: "/>
+                    <p:inputText id="apellidos" value="#{inputBean.apellidos}"/>
+                    
+                    <p:outputLabel for="edad" value="Edad: "/>
+                    <p:inputText id="edad" value="#{inputBean.edad}"/>
+                    
+                    <p:outputLabel for="ci" value="Ci: "/>
+                    <p:inputText id="ci" value="#{inputBean.ci}"/>
+                    
+                    <p:outputLabel for="estadocivil" value="Estado Civil: "/>
+                    <p:inputText id="estadocivil" value="#{inputBean.estadocivil}"/>
+                    
+                    <p:outputLabel for="correo" value="Correo: "/>
+                    <p:inputText id="correo" value="#{inputBean.correo}"/>
+                    
+                    <p:outputLabel for="carrera" value="Carrera: "/>
+                    <p:inputText id="carrera" value="#{inputBean.carrera}"/>
+                    
+                    <p:outputLabel for="curso" value="Curso: "/>
+                    <p:inputText id="curso" value="#{inputBean.curso}"/>
+                    
+                    <p:outputLabel for="fecha" value="Fecha de Nacimiento: "/>
+                    <p:inputMask id="fecha" value="#{inputBean.fecha}" mask="99/99/9999"/>
+
+                    <p:outputLabel for="telefono" value="Telefono: "/>
+                    <p:inputMask id="telefono" value="#{inputBean.fono}" mask="(999) 999-99999"/>
+
+                    <p:commandButton value="Enviar" update="display" oncomplete="PF ('dlg').show()"/>
+                    <p:commandButton value="Limpiar" type="reset"/>
+
+                </p:panelGrid>
+                <p:dialog widgetVar="dlg" modal="true" resizable="false" header="Datos Obtenidos del Estudiante" showEffect="modal" focus="panel">
+                    <p:panelGrid columns="2" columnClasses="label.value" id="display">
+
+                        <h:outputLabel value="Nombres"/>
+                        <h:outputText id="nomb" value="#{inputBean.nombres}"/>
+                        
+                        <h:outputLabel value="Apellidos"/>
+                        <h:outputText id="apell" value="#{inputBean.apellidos}"/>
+                        
+                        <h:outputLabel value="Edad"/>
+                        <h:outputText id="eda" value="#{inputBean.edad}"/>
+                        
+                        <h:outputLabel value="Ci"/>
+                        <h:outputText id="c" value="#{inputBean.ci}"/>
+                        
+                        <h:outputLabel value="Estado civil"/>
+                        <h:outputText id="estadoc" value="#{inputBean.estadocivil}"/>
+                        
+                        <h:outputLabel value="Correo"/>
+                        <h:outputText id="corr" value="#{inputBean.correo}"/>
+                        
+                        <h:outputLabel value="Carrera"/>
+                        <h:outputText id="carrer" value="#{inputBean.carrera}"/>
+                        
+                        <h:outputLabel value="Curso"/>
+                        <h:outputText id="cur" value="#{inputBean.curso}"/>
+
+                        <h:outputText value="Fecha de Nacimiento"/>
+                        <h:outputText id="fec" value="#{inputBean.fecha}"/>
+
+                        <h:outputText value="Telefono"/>
+                        <h:outputText id="telef" value="#{inputBean.fono}"/>
+
+                    </p:panelGrid>
+                </p:dialog>
+            </p:panel>
+
+        </h:form>    
+    </h:body>
+</html>
+
